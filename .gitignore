@@ -1,0 +1,22 @@
+# Archivos generados por colcon (ROS 2)
+/build/
+/install/
+/log/
+
+# Cachés y paquetes generados de Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Entornos virtuales
+.venv/
+venv/
+
+# Configuración local y credenciales
+/.aws/
+/.codex/
+/.agents/
+.env
+.env.*
+!.env.example

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="bajana_solis_ws2">
+  <xacro:include filename="$(find bajana_solis_ws2_description)/urdf/materials.xacro" />
+  <xacro:include filename="$(find bajana_solis_ws2_description)/urdf/bajana_solis_ws2.gazebo" />
+  <link name="base_footprint" />
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.0008171375762108088 0.0 0.040073983365064174" rpy="0 0 0" />
+      <mass value="9.054106572251076" />
+      <inertia ixx="0.012497" iyy="0.036049" izz="0.04472" ixy="-0.0" iyz="0.0" ixz="-1.9e-05" />
+    </inertial>
+    <visual name="base_link_visual">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bajana_solis_ws2_description/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="blue" />
+    </visual>
+    <collision name="base_link_collision">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bajana_solis_ws2_description/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="lidar_1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0050000000000000044" rpy="0 0 0" />
+      <mass value="0.22195352097611892" />
+      <inertia ixx="5.2e-05" iyy="5.2e-05" izz="0.0001" ixy="0.0" iyz="0.0" ixz="0.0" />
+    </inertial>
+    <visual name="lidar_1_visual">
+      <origin xyz="-0.0 -0.0 -0.0875" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bajana_solis_ws2_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="silver" />
+    </visual>
+    <collision name="lidar_1_collision">
+      <origin xyz="-0.0 -0.0 -0.0875" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bajana_solis_ws2_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="camera_1">
+    <inertial>
+      <origin xyz="-0.019999999999999962 0.0 0.010000000000000002" rpy="0 0 0" />
+      <mass value="0.0628" />
+      <inertia ixx="4e-06" iyy="4e-06" izz="4e-06" ixy="0.0" iyz="0.0" ixz="0.0" />
+    </inertial>
+    <visual name="camera_1_visual">
+      <origin xyz="-0.11 0.0 -0.0575" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bajana_solis_ws2_description/meshes/camera_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="yellow" />
+    </visual>
+    <collision name="camera_1_collision">
+      <origin xyz="-0.11 0.0 -0.0575" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bajana_solis_ws2_description/meshes/camera_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="castor_1">
+    <inertial>
+      <origin xyz="-0.04999999999999997 0.05999999999999997 -0.006391402495744707" rpy="0 0 0" />
+      <mass value="0.16272266932459054" />
+      <inertia ixx="2.2e-05" iyy="2.2e-05" izz="3.8e-05" ixy="-0.0" iyz="-0.0" ixz="0.0" />
+    </inertial>
+    <visual name="castor_1_visual">
+      <origin xyz="-0.11 0.06 -0.0175" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bajana_solis_ws2_description/meshes/castor_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="graphite" />
+    </visual>
+    <collision name="castor_1_collision">
+      <origin xyz="-0.05 0.06 -0.0075" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="r_wheel_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.6936047530503713" />
+      <inertia ixx="0.000267" iyy="0.000488" izz="0.000267" ixy="0.0" iyz="0.0" ixz="-0.0" />
+    </inertial>
+    <visual name="r_wheel_1_visual">
+      <origin xyz="0.075 0.09 -0.0375" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bajana_solis_ws2_description/meshes/r_wheel_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="graphite" />
+    </visual>
+    <collision name="r_wheel_1_collision">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bajana_solis_ws2_description/meshes/wheel_contact.stl" scale="0.0375 0.01 0.0375" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_wheel_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.6936047530503713" />
+      <inertia ixx="0.000267" iyy="0.000488" izz="0.000267" ixy="0.0" iyz="0.0" ixz="-0.0" />
+    </inertial>
+    <visual name="l_wheel_1_visual">
+      <origin xyz="0.075 -0.09 -0.0375" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bajana_solis_ws2_description/meshes/l_wheel_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="graphite" />
+    </visual>
+    <collision name="l_wheel_1_collision">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bajana_solis_ws2_description/meshes/wheel_contact.stl" scale="0.0375 0.01 0.0375" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="lidar_join" type="fixed">
+    <origin xyz="0.0 0.0 0.0875" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="lidar_1" />
+  </joint>
+  <joint name="camera_join" type="fixed">
+    <origin xyz="0.11 0.0 0.0575" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="camera_1" />
+  </joint>
+  <joint name="castor_join" type="fixed">
+    <origin xyz="0.11 -0.06 0.0175" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="castor_1" />
+  </joint>
+  <joint name="r_join" type="continuous">
+    <origin xyz="-0.075 -0.09 0.0375" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="r_wheel_1" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0.001" friction="0" />
+  </joint>
+  <joint name="l_join" type="continuous">
+    <origin xyz="-0.075 0.09 0.0375" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="l_wheel_1" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0.001" friction="0" />
+  </joint>
+  <joint name="base_footprint_joint" type="fixed">
+    <origin xyz="0.075 0 0" rpy="0 0 0" />
+    <parent link="base_footprint" />
+    <child link="base_link" />
+  </joint>
+</robot>
